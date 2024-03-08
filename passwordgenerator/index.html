@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+<style>
+    *
+    {
+       background-color:white;
+    }
+    .head
+    {
+        font:20px;
+        color:black;
+        place-content: center;
+    }
+    .container
+    {
+        transform: translate(50%,20%);
+        height: 150px;
+        width: 500px;
+        border:2px solid black;
+        border-radius: 8px;
+        background-color: aliceblue;
+
+      
+    }
+#password
+{
+    position: relative;
+    left:10px;
+    padding:20px 35px;
+    border-radius: 10px;
+    background-color: white;
+}
+#btn
+{
+
+    position: absolute;
+    
+    top:60px;
+    margin-left: 20px;
+    padding:8px 8px;
+    background-color: black;
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#btn:hover{
+    color:black;
+    background-color: rgb(205, 156, 251);
+}
+</style>
+</head>
+<body>
+    <h1 class="head">The Password Generator</h1>
+    <div class="container">
+    <input type="text" id="password" readonly>
+    <input type="button" value="Generate Password" onclick="generatePass()" id="btn">
+   </div>
+    <script>
+
+function generatePass() {
+	let pass = '';
+	let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'+'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+
+	for (let i = 1; i <= 8; i++) {
+		let char = Math.floor(Math.random()* str.length + 1);
+
+
+	pass += str.charAt(char)
+	}
+    password.style.fontSize="20px";
+
+	document.getElementById("password").value=pass;
+}
+
+</script>
+
+</body>
+</html>
